@@ -1,0 +1,16 @@
+.box {
+  margin: auto;
+  margin-top: 20px;
+  width: 400px;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 4px;
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  background: darkgrey;
+}
+
+.title {
+  color: darkblue;
+}
