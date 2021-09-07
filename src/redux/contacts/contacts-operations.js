@@ -11,8 +11,6 @@ import {
   deleteContactError,
 } from './contacts-actions';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
-
 const fetchContacts = () => async dispatch => {
   dispatch(fetchContactsRequest());
 
