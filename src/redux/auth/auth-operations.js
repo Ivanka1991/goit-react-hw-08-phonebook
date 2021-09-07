@@ -28,7 +28,7 @@ const token = {
 export const register = credentials => async dispatch => {
   dispatch(registerRequest());
   try {
-    const response = await axios.post('/users/singup', credentials);
+    const response = await axios.post('/users/signup', credentials);
     token.set(response.data.token);
     dispatch(registerSuccess(response.data));
   } catch (error) {

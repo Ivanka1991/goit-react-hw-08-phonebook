@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux';
 import { authSelectors } from 'redux/auth';
 
 export default function PrivateRoute({
-  isAuthenticated,
-  redirectTo,
+  redirectTo = '/',
   children,
   ...routeProps
 }) {

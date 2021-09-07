@@ -6,6 +6,7 @@ export default function AuthNav() {
       <NavLink to="/register" exact>
         Registration
       </NavLink>
+
       <NavLink to="/login" exact>
         Sing In
       </NavLink>
