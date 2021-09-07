@@ -1,27 +1,37 @@
 .list {
   list-style: none;
-  padding-left: 20px;
   width: 280px;
+  padding: 0;
 }
 .list__item {
   margin: 3px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   font-weight: 600;
 }
 .deleteBtn {
-  border: none;
-  background: none;
   cursor: pointer;
   color: red;
-  font-size: 12px;
+  height: 20px;
+  font-size: 10px;
+  border: 1px solid rgba(70, 174, 252, 1);
+  align-items: flex-start;
 }
 .name {
   font-size: 18px;
+  color: rgba(70, 174, 252, 1);
 }
 .number {
   font-size: 14px;
   color: slategray;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

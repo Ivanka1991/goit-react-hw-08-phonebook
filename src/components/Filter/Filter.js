@@ -8,17 +8,18 @@ const Filter = () => {
   const value = useSelector(getFilter);
   const dispatch = useDispatch();
   return (
-    <TextField
-      id="outlined-search"
-      type="search"
-      label="Find contacts by name"
-      variant="outlined"
-      name="name"
-      className={css.input}
-      //type="text"
-      value={value}
-      onChange={e => dispatch(actions.changeFilter(e.target.value))}
-    />
+    <div className={css.container}>
+      <TextField
+        id="outlined-search"
+        type="search"
+        label="Find contacts by name"
+        variant="outlined"
+        name="name"
+        className={css.input}
+        value={value}
+        onChange={e => dispatch(actions.changeFilter(e.target.value))}
+      />
+    </div>
   );
 };
 

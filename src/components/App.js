@@ -7,10 +7,10 @@ import Container from './Container/Container';
 import AppBar from './AppBar/AppBar';
 import { authOperations } from 'redux/auth';
 
-const HomeView = lazy(() => import('../views/HomeView'));
-const RegisterView = lazy(() => import('../views/RegisterView'));
-const LoginView = lazy(() => import('../views/LoginView'));
-const ContactsView = lazy(() => import('../views/ContactsView'));
+const HomeView = lazy(() => import('../views/HomeView/HomeView'));
+const RegisterView = lazy(() => import('../views/RegisterView/RegisterView'));
+const LoginView = lazy(() => import('../views/LoginView/LoginView'));
+const ContactsView = lazy(() => import('../views/ContactView/ContactsView'));
 
 function App() {
   const dispatch = useDispatch();

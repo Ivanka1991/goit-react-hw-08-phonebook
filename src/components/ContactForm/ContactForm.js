@@ -10,6 +10,7 @@ import SaveIcon from '@material-ui/icons/Save';
 function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
 
@@ -37,35 +38,38 @@ function ContactForm() {
   };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit}>
-      <TextField
-        className={css.input}
-        id="standard-basic"
-        label="Name"
-        value={name}
-        onChange={handleNameChange}
-        type="text"
-        name="name"
-      />
-      <TextField
-        className={css.input}
-        id="standard-basic"
-        label="Number"
-        value={number}
-        onChange={handleNumberChange}
-        type="tel"
-        name="number"
-      />
-      <Button
-        variant="outlined"
-        color="primary"
-        size="small"
-        className={css.btn}
-        startIcon={<SaveIcon />}
-      >
-        Add contact
-      </Button>
-    </form>
+    <div className={css.container}>
+      <form className={css.form} onSubmit={handleSubmit}>
+        <TextField
+          className={css.input}
+          id="standard-basic"
+          label="Name"
+          value={name}
+          onChange={handleNameChange}
+          type="text"
+          name="name"
+        />
+        <TextField
+          className={css.input}
+          id="standard-basic"
+          label="Number"
+          value={number}
+          onChange={handleNumberChange}
+          type="tel"
+          name="number"
+        />
+        <Button
+          variant="outlined"
+          color="primary"
+          size="small"
+          type="submit"
+          className={css.btn}
+          startIcon={<SaveIcon />}
+        >
+          Add contact
+        </Button>
+      </form>
+    </div>
   );
 }
 export default ContactForm;

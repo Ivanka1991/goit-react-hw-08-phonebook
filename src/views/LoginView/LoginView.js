@@ -1,19 +1,17 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authOperations } from '../redux/auth';
+import { authOperations } from '../../redux/auth';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import s from './LoginView.module.css';
 
-export default function RegisterView() {
+export default function LoginView() {
   const dispatch = useDispatch();
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
-      case 'name':
-        return setName(value);
       case 'email':
         return setEmail(value);
       case 'password':
@@ -25,26 +23,16 @@ export default function RegisterView() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(authOperations.register({ name, email, password }));
-    setName('');
+    dispatch(authOperations.logIn({ email, password }));
     setEmail('');
     setPassword('');
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit} autoComplete="off">
+      <form className={s.form} onSubmit={handleSubmit} autoComplete="off">
         <TextField
-          required
-          id="outlined-required"
-          label="Name"
-          type="name"
-          name="name"
-          value={name}
-          variant="outlined"
-          onChange={handleChange}
-        />
-        <TextField
+          className={s.input}
           required
           id="outlined-required"
           label="Email"
@@ -55,6 +43,7 @@ export default function RegisterView() {
           onChange={handleChange}
         />
         <TextField
+          className={s.input}
           required
           id="outlined-required"
           label="Password"
@@ -64,9 +53,8 @@ export default function RegisterView() {
           variant="outlined"
           onChange={handleChange}
         />
-
         <Button variant="outlined" color="primary" type="submit">
-          Register
+          Sign in
         </Button>
       </form>
     </div>

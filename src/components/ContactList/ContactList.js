@@ -13,26 +13,28 @@ function ContactList() {
   useEffect(() => dispatch(operations.fetchContacts()), [dispatch]);
   const onDeleteContact = id => dispatch(operations.deleteContact(id));
   return (
-    <ul className={css.list}>
-      {contacts.map(({ id, name, number }) => {
-        return (
-          <li key={id} className={css.list__item}>
-            <span className={css.name}>{name}</span>
-            <span className={css.number}>{number}</span>
-            <Button
-              className={css.deleteBtn}
-              variant="outlined"
-              color="default"
-              size="small"
-              startIcon={<DeleteIcon />}
-              onClick={() => onDeleteContact(id)}
-            >
-              Delete
-            </Button>
-          </li>
-        );
-      })}
-    </ul>
+    <div className={css.container}>
+      <ul className={css.list}>
+        {contacts.map(({ id, name, number }) => {
+          return (
+            <li key={id} className={css.list__item}>
+              <span className={css.name}>{name}</span>
+              <span className={css.number}>{number}</span>
+              <Button
+                className={css.deleteBtn}
+                variant="outlined"
+                color="default"
+                size="small"
+                startIcon={<DeleteIcon style={{ fontSize: 14 }} />}
+                onClick={() => onDeleteContact(id)}
+              >
+                Delete
+              </Button>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 
