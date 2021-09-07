@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import avatar from './img/avatar.jpg';
 
 export default function UserMenu() {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
 
   return (
