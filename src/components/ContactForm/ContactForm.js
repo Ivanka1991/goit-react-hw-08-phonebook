@@ -4,7 +4,7 @@ import operations from '../../redux/contacts/contacts-operations';
 import { getContacts } from '../../redux/contacts/contacts-selectors';
 import css from './ContactForm.module.css';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+//import TextField from '@material-ui/core/TextField';
 import SaveIcon from '@material-ui/icons/Save';
 
 function ContactForm() {
@@ -40,7 +40,35 @@ function ContactForm() {
   return (
     <div className={css.container}>
       <form className={css.form} onSubmit={handleSubmit}>
-        <TextField
+        <label className={css.formLabel}>
+          <input
+            placeholder="Name"
+            label="Name"
+            type="text"
+            name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="The name can only consist of letters, apostrophes, dashes and spaces. For example, Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan etc."
+            required
+            className={css.input}
+            value={name}
+            onChange={handleNameChange}
+          />
+        </label>
+
+        <label className={css.formLabel}>
+          <input
+            placeholder="Number"
+            type="tel"
+            name="number"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
+            required
+            className={css.input}
+            value={number}
+            onChange={handleNumberChange}
+          />
+        </label>
+        {/* <TextField
           className={css.input}
           id="standard-basic"
           label="Name"
@@ -57,7 +85,7 @@ function ContactForm() {
           onChange={handleNumberChange}
           type="tel"
           name="number"
-        />
+        /> */}
         <Button
           variant="outlined"
           color="primary"
